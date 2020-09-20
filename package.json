@@ -1,0 +1,70 @@
+{
+    "name": "my-app-v-1",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@gooddata/api-client-bear": "^8.0.0-beta.50",
+        "@gooddata/goodstrap": "^68.18.1",
+        "@gooddata/sdk-backend-bear": "^8.0.0-beta.50",
+        "@gooddata/sdk-backend-spi": "^8.0.0-beta.50",
+        "@gooddata/sdk-model": "^8.0.0-beta.50",
+        "@gooddata/sdk-ui": "^8.0.0-beta.50",
+        "@gooddata/sdk-ui-charts": "^8.0.0-beta.50",
+        "@gooddata/sdk-ui-ext": "^8.0.0-beta.50",
+        "@gooddata/sdk-ui-geo": "^8.0.0-beta.50",
+        "@gooddata/api-model-bear": "^8.0.0-beta.50",
+        "@gooddata/sdk-ui-filters": "^8.0.0-beta.50",
+        "@gooddata/sdk-ui-pivot": "^8.0.0-beta.50",
+        "classnames": "^2.2.6",
+        "formik": "^1.5.7",
+        "lodash": "^4.17.15",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "react-helmet": "^5.2.1",
+        "react-router-dom": "^5.0.1",
+        "react-router-use-location-state": "^2.3.1",
+        "react-scripts": "3.0.1",
+        "use-location-state": "^2.3.1",
+        "yup": "^0.27.0"
+    },
+    "scripts": {
+        "start": "cross-env HTTPS=true react-scripts start",
+        "build": "react-scripts build",
+        "eject": "react-scripts eject",
+        "test": "react-scripts test --setupFilesAfterEnv ./jest.setup.js",
+        "testcafe-backend": "rm -R ./build & yarn build & serve -l 5000 build",
+        "testcafe": "cross-env TEST_BACKEND=http://localhost:5000 ./scripts/run-testcafe.js",
+        "testcafe-visual": "cross-env TEST_MODE=visual ./scripts/run-testcafe.js"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "cross-env": "^5.2.0",
+        "enzyme": "^3.10.0",
+        "enzyme-adapter-react-16": "^1.14.0",
+        "husky": "^3.0.0",
+        "node-sass": "^4.12.0",
+        "prettier": "^1.18.2",
+        "pretty-quick": "^1.11.1",
+        "serve": "^11.2.0",
+        "testcafe": "^1.5.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged --pattern \"**/*.*(js|jsx|scss)\""
+        }
+    }
+}
